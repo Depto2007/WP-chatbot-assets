@@ -1,0 +1,263 @@
+/* ===========================
+   Global Styles
+   =========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* ===========================
+   Body Styling
+   =========================== */
+body {
+    background-color: pink;
+    color: white;
+    overflow: hidden;
+}
+
+/* ===========================
+   Chatbot Floating Button
+   =========================== */
+.chatbot-button {
+    position: fixed;
+    bottom: 60px;
+    right: 40px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.chatbot-button:hover {
+    transform: scale(1.1);
+}
+
+.chatbot-icon {
+    font-size: 24px;
+    color: white;
+}
+
+/* ===========================
+   Chatbox Main Container
+   =========================== */
+.chatbox {
+    position: fixed;
+    bottom: 110px;
+    right: 20px;
+    width: 300px;
+    height: 50%;
+    background: #1e1e1e;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 0.3s ease-in-out, opacity 0.3s;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* ===========================
+   Chatbox Header Section
+   =========================== */
+.chatbox-header {
+    background: #ff5722;
+    color: white;
+    padding: 8px;
+    height: 50px;
+    display: flex;
+    gap: 10px;
+    box-sizing: border-box;
+    font-weight: bold;
+    cursor: grab;
+}
+
+/* Chatbot Profile Image */
+.chatbox-header .chatbot-img {
+    height: 100%;
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 1.5px solid white;
+}
+
+/* Chatbot Profile Details */
+.chatbox-header .chatbot-details img {
+    height: 100%;
+    width: 100%;
+}
+
+.chatbox-header .chatbot-details h3 {
+    font-size: 18px;
+}
+
+.chatbox-header .chatbot-details p {
+    font-size: 10px;
+    color: #F0F0F0;
+}
+
+/* ===========================
+   Chatbox Body Section
+   =========================== */
+.chatbox-body {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+/* ===========================
+   Chatbox Footer Section
+   =========================== */
+.chatbox-footer {
+    display: flex;
+    padding: 10px;
+    background: #282828;
+}
+
+/* Input Field Styling */
+.chatbot-input-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    background: #383838;
+    display: flex;
+    border: 2px solid white;
+}
+
+.chatbot-input-container input {
+    padding: 0px 10px;
+    border: none;
+    outline: none;
+    color: white;
+    width: 100%;
+    background: transparent;
+}
+
+.chatbot-input-container button {
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 0px 4px;
+}
+
+/* Send Button SVG */
+.chatbox-footer button svg {
+    height: 30px;
+    width: 30px;
+}
+
+/* ===========================
+   Chat Messages Styling
+   =========================== */
+.message {
+    padding: 8px;
+    margin: 6px 0;
+    display: inline-block;
+    max-width: 80%;
+    word-wrap: break-word;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeIn 0.3s ease-in-out forwards;
+}
+
+/* User Message */
+.user-message {
+    background: #007bff;
+    color: white;
+    align-self: flex-end;
+    border-radius: 10px 10px 0px 10px;
+}
+
+/* Bot Message */
+.bot-message {
+    background: #444;
+    color: white;
+    border-radius: 10px 10px 10px 0px;
+}
+
+/* ===========================
+   Animation Effects
+   =========================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Show Chatbox Effect */
+.show-chatbox {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* ===========================
+   Chatbot Icon Container
+   =========================== */
+.chatbot-icon-container {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    perspective: 1000px;
+}
+
+/* 3D Rotation Effect */
+.chatbot-icon-container .icon-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+}
+
+/* Flipped Icon */
+.chatbot-icon-container.flipped .icon-inner {
+    transform: rotateY(180deg);
+}
+
+/* Front & Back Icons */
+.chatbot-icon-container .icon-front, 
+.chatbot-icon-container .icon-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+/* Front Icon */
+.chatbot-icon-container .icon-front {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Back Icon */
+.chatbot-icon-container .icon-back {
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(180deg);
+}
+
+/* Chatbot Icon SVG */
+.chatbot-icon-container svg {
+    width: 100%;
+    height: 100%;
+    fill: #00aaff;
+}
