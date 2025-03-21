@@ -1,25 +1,10 @@
 /* ===========================
-   Global Styles
-   =========================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-/* ===========================
-   Body Styling
-   =========================== */
-body {
-    background-color: pink;
-    color: white;
-    overflow: hidden;
-}
-
-/* ===========================
    Chatbot Floating Button
    =========================== */
+   *{
+     margin: 0px;
+     padding: 0px;
+   }
 .chatbot-button {
     position: fixed;
     bottom: 60px;
